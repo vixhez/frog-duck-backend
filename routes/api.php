@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\Ducks;
+use App\Http\Controllers\API\Frogs;
 
 
 /*
@@ -20,4 +21,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Route::group(['prefix' => 'ducks'], function () {
+//     Route::get('', [Ducks::class, 'allDucks']);
+// });
+
 Route::get('/ducks', [Ducks::class, 'index']);
+
+Route::get('/ducks/{duck}', [Ducks::class, 'show']);
+
+Route::get('/frogs', [Frogs::class, 'index']);
+
+Route::get('/frogs/{frog}', [Frogs::class, 'show']);

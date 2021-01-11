@@ -4,9 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Duck;
+use App\Models\Frog;
 
-class Ducks extends Controller
+class Frogs extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class Ducks extends Controller
      */
     public function index()
     {
-        return Duck::all();
+        return Frog::all();
     }
 
     /**
@@ -35,9 +35,9 @@ class Ducks extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Duck $duck)
+    public function show(Frog $frog)
     {
-        return $duck;
+        return $frog;
     }
 
     /**
