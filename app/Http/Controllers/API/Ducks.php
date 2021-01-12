@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Duck;
+use App\Http\Resources\API\DuckResource;
 
 class Ducks extends Controller
 {
@@ -15,7 +16,7 @@ class Ducks extends Controller
      */
     public function index()
     {
-        return Duck::all();
+        return DuckResource::collection(Duck::all());
     }
 
     /**
@@ -37,7 +38,8 @@ class Ducks extends Controller
      */
     public function show(Duck $duck)
     {
-        return $duck;
+        // return $duck;
+        return new DuckResource($duck);
     }
 
     /**

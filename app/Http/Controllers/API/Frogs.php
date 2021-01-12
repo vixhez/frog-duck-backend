@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Frog;
+use App\Http\Resources\API\FrogResource;
 
 class Frogs extends Controller
 {
@@ -15,7 +16,7 @@ class Frogs extends Controller
      */
     public function index()
     {
-        return Frog::all();
+        return FrogResource::collection(Frog::all());
     }
 
     /**
@@ -37,7 +38,7 @@ class Frogs extends Controller
      */
     public function show(Frog $frog)
     {
-        return $frog;
+        return new FrogResource($frog);
     }
 
     /**
