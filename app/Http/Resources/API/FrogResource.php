@@ -20,7 +20,7 @@ class FrogResource extends JsonResource
             "latin_name" => $this->latin_name,
             "description" => $this->description,
             "conservation" => $this->conservation,
-            "location" => $this->location
+            "location" => $this->location,
             "extroversion" => $this->extroversion,
             "colourfulness" => $this->colourfulness,
             "kindness" => $this->kindness,
